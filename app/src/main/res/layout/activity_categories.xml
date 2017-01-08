@@ -3,55 +3,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0099cc"
     tools:context="de.pinyto.virtualon_siteshopping.FullscreenActivity">
 
-    <Button
-        android:id="@+id/category_button"
-        style="?metaButtonBarButtonStyle"
-        android:layout_width="match_parent"
-        android:keepScreenOn="true"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dairy Products" />
+        android:paddingLeft="30dp"
+        android:paddingTop="30dp"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Please, choose a category:"/>
 
-    <Button
-        android:id="@+id/category2_button"
-        style="?metaButtonBarButtonStyle"
-        android:layout_width="match_parent"
-        android:keepScreenOn="true"
+    <GridLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Beverages" />
+        android:columnCount="3"
+        android:padding="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:rowCount="3">
 
-    <Button
-        android:id="@+id/category3_button"
-        style="?metaButtonBarButtonStyle"
-        android:layout_width="match_parent"
-        android:keepScreenOn="true"
-        android:layout_height="wrap_content"
-        android:text="Canned Goods" />
+        <Button
+            android:id="@+id/category_button"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:textColor="@color/white"
+            android:text="Dairy Products" />
 
-    <Button
-        android:id="@+id/category4_button"
-        style="?metaButtonBarButtonStyle"
-        android:layout_width="match_parent"
-        android:keepScreenOn="true"
-        android:layout_height="wrap_content"
-        android:text="Dressings and Sauces" />
+        <Button
+            android:id="@+id/category3_button"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:textColor="@color/white"
+            android:text="Canned Goods" />
 
-    <Button
-        android:id="@+id/category5_button"
-        style="?metaButtonBarButtonStyle"
-        android:layout_width="match_parent"
-        android:keepScreenOn="true"
-        android:layout_height="wrap_content"
-        android:text="Frozen Foods" />
+        <Button
+            android:id="@+id/category4_button"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:textColor="@color/white"
+            android:text="Diet Food" />
 
-    <Button
-        android:id="@+id/category6_button"
-        style="?metaButtonBarButtonStyle"
-        android:layout_width="match_parent"
-        android:keepScreenOn="true"
-        android:layout_height="wrap_content"
-        android:text="Laundry" />
+        <Button
+            android:id="@+id/category2_button"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:textColor="@color/white"
+            android:drawableLeft="@drawable/beverages"
+            android:text="Drinks" />
 
+        <Button
+            android:id="@+id/category5_button"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:textColor="@color/white"
+            android:text="Beauty" />
+
+        <Button
+            android:id="@+id/category6_button"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:textColor="@color/white"
+            android:text="Laundry" />
+
+        <Button
+            android:id="@+id/category7_button"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:textColor="@color/white"
+            android:text="Candy" />
+
+        <Button
+            android:id="@+id/category8_button"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:textColor="@color/white"
+            android:text="Baby" />
+
+        <Button
+            android:id="@+id/category9_button"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:textColor="@color/white"
+            android:text="Household" />
+    </GridLayout>
 </LinearLayout>
