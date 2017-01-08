@@ -1,0 +1,337 @@
+<html> 
+	<head> 
+		<title>Virtual Shelf</title> 			
+        <link rel="stylesheet" type="text/css" href="x3dom.css" />
+		<script type="text/javascript" src="x3dom.js"></script>
+	</head> 
+	<body> 
+	<div>
+
+	<div id="topBar">
+		<!-- <button id="back-btn"></button> -->
+		<button id="view-cart-btn" onclick="viewCart()"></button>
+	</div>
+
+	<div id="cart-display" class="hidden"></div>
+	
+	<div id="s1" class="shelf">
+		<img class="product" src="biezp5_still00.png" onclick="openDisplay('bp5')">
+		<img class="product" src="biezp9_still00.png" onclick="openDisplay('bp9')">
+		<img class="product" src="sviests_still00.png" onclick="openDisplay('sviests')">
+	</div>
+	<div id="s2" class="shelf">
+		<img class="product" src="piens_still00.png" onclick="openDisplay('piens')">
+	</div>
+	<div id="s3" class="shelf"></div>
+
+	<div id="div-display" class="hidden">
+		<div>
+			<button id="close-btn" onclick="closeDisplay()"></button>
+			<button id="add-to-cart-btn" onclick="addToCart()"></button>
+			
+		</div>
+
+		<x3d> 
+			<scene>
+				<Viewpoint id="vp-sviests" position = "0 3 1.75" orientation = "-1 0.5 1 1.5"></Viewpoint> 
+				<Viewpoint id="vp-bp" position="0 4 1.75" orientation="-6.9 1.2 1.8 1.25"></Viewpoint>
+				<Viewpoint id="vp-piens" position="0 4.5 16" orientation="0 0 0 1"></Viewpoint>
+
+				<inline id="inline"> </inline> 
+			</scene> 
+		</x3d>   
+
+		<div id="product-info">
+		</div> 
+	</div>
+
+	</div>
+		<script>
+			var shoppingCart = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+			var cartVisible = false;
+
+			function viewCart() {
+				if(cartVisible) {
+    				document.getElementById("cart-display").classList.add("hidden");
+
+					document.getElementById('s1').classList.remove("hidden");
+					document.getElementById('s2').classList.remove("hidden");
+					document.getElementById('s3').classList.remove("hidden");
+					cartVisible = false;
+				} else {
+					document.getElementById('s1').classList.add("hidden");
+					document.getElementById('s2').classList.add("hidden");
+					document.getElementById('s3').classList.add("hidden");
+					if (!document.getElementById("div-display").classList.contains("hidden")) {
+						document.getElementById("div-display").classList.add("hidden");
+					}
+					var cd = document.getElementById("cart-display");
+					cd.classList.remove("hidden");
+					cartVisible = true;
+
+					var total = 0;
+					cd.innerHTML = "";
+					for (var i = 0; i < shoppingCart.length; i++) {
+						if (shoppingCart[i] !== 0) {
+							if (i === 0) {
+								cd.innerHTML += "<p>Piens Limba&#382;u 3,5% (17.01.17)";
+								var price = 1.79;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 1) {
+								cd.innerHTML += "<p>Piens Limba&#382;u 3,5% (16.01.17)";
+								var price = 1.70;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 2) {
+								cd.innerHTML += "<p>Piens Limba&#382;u 3,5% (14.01.17)";
+								var price = 1.52;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 3) {
+								cd.innerHTML += "<p>Piens Limba&#382;u 3,5% (12.01.17)";
+								var price = 1.25;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 4) {
+								cd.innerHTML += "<p>Piens Limba&#382;u 3,5% (&#353;odien)";
+								var price = 0.45;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 5) {
+								cd.innerHTML += "<p>Sviests RASA Saldkr&#275;juma (17.01.17)";
+								var price = 2.15;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 6) {
+								cd.innerHTML += "<p>Sviests RASA Saldkr&#275;juma (16.01.17)";
+								var price = 2.05;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 7) {
+								cd.innerHTML += "<p>Sviests RASA Saldkr&#275;juma (14.01.17)";
+								var price = 1.83;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 8) {
+								cd.innerHTML += "<p>Sviests RASA Saldkr&#275;juma (12.01.17)";
+								var price = 1.50;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 9) {
+								cd.innerHTML += "<p>Sviests RASA Saldkr&#275;juma (&#353;odien)";
+								var price = 0.54;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 10) {
+								cd.innerHTML += "<p>Biezpiens Valmiera (17.01.17)";
+								var price = 1.45;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 11) {
+								cd.innerHTML += "<p>Biezpiens Valmiera (16.01.17)";
+								var price = 1.38;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 12) {
+								cd.innerHTML += "<p>Biezpiens Valmiera (14.01.17)";
+								var price = 1.23;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 13) {
+								cd.innerHTML += "<p>Biezpiens Valmiera (12.01.17)";
+								var price = 1.02;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 14) {
+								cd.innerHTML += "<p>Biezpiens Valmiera (&#353;odien)";
+								var price = 0.40;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 15) {
+								cd.innerHTML += "<p>Pilnpiena Biezpiens Valmiera (17.01.17)";
+								var price = 1.55;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 16) {
+								cd.innerHTML += "<p>Pilnpiena Biezpiens Valmiera (16.01.17)";
+								var price = 1.38;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 17) {
+								cd.innerHTML += "<p>Pilnpiena Biezpiens Valmiera (14.01.17)";
+								var price = 1.32;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 18) {
+								cd.innerHTML += "<p>Pilnpiena Biezpiens Valmiera (12.01.17)";
+								var price = 1.09;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							} else if (i === 19) {
+								cd.innerHTML += "<p>Pilnpiena Biezpiens Valmiera (&#353;odien)";
+								var price = 1.40;
+								if (shoppingCart[i] > 1) {
+									cd.innerHTML += shoppingCart[i] + "x "+price+"&#8364; = " + (shoppingCart[i] * price) + "&#8364;";
+								} else {
+									cd.innerHTML += price+"&#8364;"
+								}
+								cd.innerHTML += "</p>";
+								total += shoppingCart[i] * price;
+							}
+						}
+					}
+					cd.innerHTML += "<p>Summa: "+total +"&#8364;</p>"
+				}
+			}
+
+			function addToCart() {
+				var product = 0;
+				var model = document.getElementById('inline').getAttribute('url');
+				if (model === 'milkbox.x3d') {product = 0;}
+				else if (model === 'sviests.x3d') {product = 5;}
+				else if (model === 'biezpiens5.x3d') {product = 10;}
+				else if (model === 'biezpiens9.x3d') {product = 15;}
+				var doe = document.getElementById('doe-select').selectedIndex;
+				product += doe;
+				shoppingCart[product] = shoppingCart[product] + 1;
+			}
+
+			function closeDisplay() {
+    			document.getElementById("div-display").classList.add("hidden");
+
+				document.getElementById('s1').classList.remove("hidden");
+				document.getElementById('s2').classList.remove("hidden");
+				document.getElementById('s3').classList.remove("hidden");
+			}
+
+			function openDisplay(item) {
+				document.getElementById('s1').classList.add("hidden");
+				document.getElementById('s2').classList.add("hidden");
+				document.getElementById('s3').classList.add("hidden");
+
+				document.getElementById("div-display").classList.remove("hidden");
+
+				var prodBox = document.getElementById('product-info');
+				var inline = document.getElementById('inline');
+
+				if (item === 'piens') {
+					prodBox.innerHTML = "<h3 align='center'>Piens Limba&#382;u 3,5%</h3> <p><b>Cena:</b> 1,79&#8364;</p> <p><b>Der&#299;guma termi&#326;&#353;:</b> <select id='doe-select'><option value='0'>17.01.17</option><option value='1'>16.01.17 (1,70&#8364;)</option><option value='2'>14.01.17 (1,52&#8364;)</option><option value='3'>12.01.17 (1,25&#8364;)</option><option value='4'>&#353;odien (0,45&#8364;)</option></select></p> <p><b>Tilpums:</b> 1L</p> <p><b>Litra cena:</b> 1,79&#8364;/L</p> <p><b>Izcelsmes kods:</b> A: LV P 0195 001 B: LV P 9601 014</p> <p><b>Uzturv&#275;rt&#299;ba 100ml produkta:</b> <table> <tr>    <th>ener&#291;&#275;tisk&#257; v&#275;rt&#299;ba</th>    <th>266 kJ/64 kcal</th>  </tr>  <tr>    <td>tauki</td>   <td>3,5g</td> </tr>  <tr>    <td>tostarp: pies&#257;tin&#257;t&#257;s tauksk&#257;bes</td> <td>2,3g</td> </tr> <tr>    <td>og&#316;hidr&#257;ti</td> <td>4,5g</td> </tr><tr>    <td>tostarp: cukuri</td> <td>4,5g</td></tr>  <tr>    <td>olbaltumvielas</td>    <td>3,5g</td>  </tr>  <tr>    <td>s&#257;ls</td><td>0,1g</td></tr></table></p> <p><b>Z&#299;mogi:</b> </p><img width='100px' src='zala_josta_label.png'>";
+					document.getElementById('vp-piens').setAttribute('set_bind', 'true');
+					inline.url = "milkbox.x3d";
+				}
+				else if (item === 'sviests') {
+					prodBox.innerHTML = "<h3 align='center'>Sviests RASA Saldkr&#275;juma</h3> <p><b>Cena:</b> 2,15&#8364;</p> <p><b>Der&#299;guma termi&#326;&#353;:</b> <select id='doe-select'><option value='0'>17.01.17</option><option value='1'>16.01.17 (2,05&#8364;)</option><option value='2'>14.01.17 (1,83&#8364;)</option><option value='3'>12.01.17 (1,50&#8364;)</option><option value='4'>&#353;odien (0,54&#8364;)</option></select></p> <p><b>Daudzums:</b> 180g</p> <p><b>Kilograma cena:</b> 11,95&#8364;/kg</p> <p><b>Izcelsmes kods:</b> LV P 0193 001</p> <p><b>Uzturv&#275;rt&#299;ba 100g produkta:</b> <table> <tr>    <th>ener&#291;&#275;tisk&#257; v&#275;rt&#299;ba</th>    <th>3056 kJ/743 kcal</th>  </tr>  <tr>    <td>tauki</td>   <td>82g</td> </tr>  <tr>    <td>tostarp: pies&#257;tin&#257;t&#257;s tauksk&#257;bes</td> <td>53g</td> </tr> <tr>    <td>og&#316;hidr&#257;ti</td> <td>0,8g</td> </tr><tr>    <td>tostarp: cukuri</td> <td>0,8g</td></tr>  <tr>    <td>olbaltumvielas</td>    <td>0,5g</td>  </tr>  <tr>    <td>s&#257;ls</td><td>0,02g</td></tr></table></p> <p><b>Z&#299;mogi:</b> </p><img width='100px' src='sarkana_karote_label.png'>";
+					document.getElementById('vp-sviests').setAttribute('set_bind', 'true');
+					inline.url = "sviests.x3d";
+				}
+				else if (item === 'bp5') {
+					prodBox.innerHTML = "<h3 align='center'>Biezpiens Valmiera</h3> <p><b>Cena:</b> 1,45&#8364;</p> <p><b>Der&#299;guma termi&#326;&#353;:</b> <select id='doe-select'><option value='0'>17.01.17</option><option value='1'>16.01.17 (1,38&#8364;)</option><option value='2'>14.01.17 (1,23&#8364;)</option><option value='3'>12.01.17 (1,02&#8364;)</option><option value='4'>&#353;odien (0,40&#8364;)</option></select></p> <p><b>Daudzums:</b> 180g</p> <p><b>Kilograma cena:</b> 8,06&#8364;/kg</p> <p><b>Izcelsmes kods:</b> A: LV P 0195 001 B: LV P 9601 014</p> <p><b>Uzturv&#275;rt&#299;ba 100g produkta:</b> <table> <tr>    <th>ener&#291;&#275;tisk&#257; v&#275;rt&#299;ba</th>    <th>520 kJ/124 kcal</th>  </tr>  <tr>    <td>tauki</td>   <td>5,0g</td> </tr>  <tr>    <td>tostarp: pies&#257;tin&#257;t&#257;s tauksk&#257;bes</td> <td>3,1g</td> </tr> <tr>    <td>og&#316;hidr&#257;ti</td> <td>2,0g</td> </tr><tr>    <td>tostarp: cukuri</td> <td>2,0g</td></tr>  <tr>    <td>olbaltumvielas</td>    <td>18,0g</td>  </tr>  <tr>    <td>s&#257;ls</td><td>0,1g</td></tr></table></p> <p><b>Z&#299;mogi:</b> </p><img width='100px' src='zala_josta_label.png'>";
+					document.getElementById('vp-bp').setAttribute('set_bind', 'true');
+					inline.url = "biezpiens5.x3d";
+				}
+				else if (item === 'bp9') {
+					prodBox.innerHTML = "<h3 align='center'>Pilnpiena Biezpiens Valmiera</h3> <p><b>Cena:</b> 1,55&#8364;</p> <p><b>Der&#299;guma termi&#326;&#353;:</b> <select id='doe-select'><option value='0'>17.01.17</option><option value='1'>16.01.17 (1,47&#8364;)</option><option value='2'>14.01.17 (1,32&#8364;)</option><option value='3'>12.01.17 (1,09&#8364;)</option><option value='4'>&#353;odien (0,40&#8364;)</option></select></p> <p><b>Daudzums:</b> 180g</p> <p><b>Kilograma cena:</b> 8,60&#8364;/kg</p> <p><b>Izcelsmes kods:</b> A: LV P 0195 001 B: LV P 9601 014</p> <p><b>Uzturv&#275;rt&#299;ba 100g produkta:</b> <table> <tr>    <th>ener&#291;&#275;tisk&#257; v&#275;rt&#299;ba</th>    <th>651 kJ/156 kcal</th>  </tr>  <tr>    <td>tauki</td>   <td>9,0g</td> </tr>  <tr>    <td>tostarp: pies&#257;tin&#257;t&#257;s tauksk&#257;bes</td> <td>5,2g</td> </tr> <tr>    <td>og&#316;hidr&#257;ti</td> <td>2,0g</td> </tr><tr>    <td>tostarp: cukuri</td> <td>2,0g</td></tr>  <tr>    <td>olbaltumvielas</td>    <td>17,0g</td>  </tr>  <tr>    <td>s&#257;ls</td><td>0,1g</td></tr></table></p> <p><b>Z&#299;mogi:</b> </p><img width='100px' src='zala_josta_label.png'>";
+					document.getElementById('vp-bp').setAttribute('set_bind', 'true');
+					inline.url = "biezpiens9.x3d";
+				}
+			}
+		</script>
+
+	</body> 
+</html> 
