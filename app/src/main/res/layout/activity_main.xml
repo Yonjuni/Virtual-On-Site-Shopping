@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="de.pinyto.virtualon_siteshopping.FullscreenActivity">
+    tools:context="de.pinyto.virtualon_siteshopping.MainActivity">
 
     <TextView
         android:layout_marginTop="100dp"
@@ -14,7 +14,6 @@
         android:text="@string/dummy_content_welcome"
         android:textSize="30sp"
         android:textStyle="bold" />
-
 
     <TextView
         android:layout_marginTop="70dp"
