@@ -3,29 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0099cc"
     tools:context="de.pinyto.virtualon_siteshopping.FullscreenActivity">
 
     <TextView
-        android:id="@+id/content"
-        android:gravity="center"
+        android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:keepScreenOn="true"
-        android:text="@string/welcome"
-        android:textColor="#33b5e5"
-        android:textSize="50sp"
+        android:gravity="center"
+        android:text="@string/dummy_content_welcome"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
+
     <TextView
-        android:id="@+id/fullscreen_content"
+        android:layout_marginTop="70dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:keepScreenOn="true"
         android:gravity="center"
         android:text="@string/dummy_content"
-        android:textColor="#33b5e5"
-        android:textSize="50sp"
+        android:textSize="25sp"
         android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sensor"
+        android:layout_gravity="center"/>
 
 </LinearLayout>
