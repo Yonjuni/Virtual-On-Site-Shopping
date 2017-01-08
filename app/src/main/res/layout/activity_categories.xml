@@ -27,7 +27,7 @@
         <Button
             android:id="@+id/category_button"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
             android:text="Dairy Products" />
@@ -35,7 +35,7 @@
         <Button
             android:id="@+id/category3_button"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
             android:text="Canned Goods" />
@@ -43,7 +43,7 @@
         <Button
             android:id="@+id/category4_button"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
             android:text="Diet Food" />
@@ -51,16 +51,15 @@
         <Button
             android:id="@+id/category2_button"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
-            android:drawableLeft="@drawable/beverages"
             android:text="Drinks" />
 
         <Button
             android:id="@+id/category5_button"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
             android:text="Beauty" />
@@ -68,7 +67,7 @@
         <Button
             android:id="@+id/category6_button"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
             android:text="Laundry" />
@@ -76,7 +75,7 @@
         <Button
             android:id="@+id/category7_button"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
             android:text="Candy" />
@@ -84,7 +83,7 @@
         <Button
             android:id="@+id/category8_button"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
             android:text="Baby" />
@@ -92,7 +91,7 @@
         <Button
             android:id="@+id/category9_button"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
             android:text="Household" />
