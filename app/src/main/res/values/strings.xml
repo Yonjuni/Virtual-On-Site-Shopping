@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Virtual On-Site Shopping</string>
 
+    <string name="welcome">WELCOME</string>
     <string name="dummy_button">CLOSE</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_content">Please touch the device with your smart cart to start.</string>
 </resources>

@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0099cc"
+    tools:context="de.pinyto.virtualon_siteshopping.FullscreenActivity">
+
+    <Button
+        android:id="@+id/category_button"
+        style="?metaButtonBarButtonStyle"
+        android:layout_width="match_parent"
+        android:keepScreenOn="true"
+        android:layout_height="wrap_content"
+        android:text="Dairy Products" />
+
+    <Button
+        android:id="@+id/category2_button"
+        style="?metaButtonBarButtonStyle"
+        android:layout_width="match_parent"
+        android:keepScreenOn="true"
+        android:layout_height="wrap_content"
+        android:text="Beverages" />
+
+    <Button
+        android:id="@+id/category3_button"
+        style="?metaButtonBarButtonStyle"
+        android:layout_width="match_parent"
+        android:keepScreenOn="true"
+        android:layout_height="wrap_content"
+        android:text="Canned Goods" />
+
+    <Button
+        android:id="@+id/category4_button"
+        style="?metaButtonBarButtonStyle"
+        android:layout_width="match_parent"
+        android:keepScreenOn="true"
+        android:layout_height="wrap_content"
+        android:text="Dressings and Sauces" />
+
+    <Button
+        android:id="@+id/category5_button"
+        style="?metaButtonBarButtonStyle"
+        android:layout_width="match_parent"
+        android:keepScreenOn="true"
+        android:layout_height="wrap_content"
+        android:text="Frozen Foods" />
+
+    <Button
+        android:id="@+id/category6_button"
+        style="?metaButtonBarButtonStyle"
+        android:layout_width="match_parent"
+        android:keepScreenOn="true"
+        android:layout_height="wrap_content"
+        android:text="Laundry" />
+
+</LinearLayout>
