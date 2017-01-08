@@ -27,74 +27,84 @@
         <Button
             android:id="@+id/category_button"
             android:backgroundTint="@color/colorPrimaryDark"
+            android:textSize="20dp"
             android:layout_width="170dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
-            android:text="Dairy Products" />
+            android:text="\uD83E\uDDC0 Dairy Products" />
 
         <Button
             android:id="@+id/category3_button"
             android:backgroundTint="@color/colorPrimaryDark"
             android:layout_width="170dp"
+            android:textSize="20dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
-            android:text="Canned Goods" />
+            android:text="\uD83D\uDDD1 Canned Goods" />
 
         <Button
             android:id="@+id/category4_button"
             android:backgroundTint="@color/colorPrimaryDark"
             android:layout_width="170dp"
+            android:textSize="20dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
-            android:text="Diet Food" />
+            android:text="\uD83C\uDF66 Tofu Ice Cream" />
 
         <Button
             android:id="@+id/category2_button"
             android:backgroundTint="@color/colorPrimaryDark"
             android:layout_width="170dp"
+            android:textSize="20dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
-            android:text="Drinks" />
+            android:text=" \uD83C\uDF77 Drinks" />
 
         <Button
             android:id="@+id/category5_button"
             android:backgroundTint="@color/colorPrimaryDark"
             android:layout_width="170dp"
+            android:textSize="20dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
-            android:text="Beauty" />
+            android:text="\uD83D\uDC84 Beauty" />
 
         <Button
             android:id="@+id/category6_button"
             android:backgroundTint="@color/colorPrimaryDark"
             android:layout_width="170dp"
+            android:textSize="20dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
-            android:text="Laundry" />
+            android:text="\uD83C\uDF55 Pizza" />
 
         <Button
             android:id="@+id/category7_button"
             android:backgroundTint="@color/colorPrimaryDark"
             android:layout_width="170dp"
+            android:textSize="20dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
-            android:text="Candy" />
+            android:text="\uD83C\uDF6C Candy" />
 
         <Button
             android:id="@+id/category8_button"
             android:backgroundTint="@color/colorPrimaryDark"
             android:layout_width="170dp"
+            android:textSize="20dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
-            android:text="Baby" />
+            android:text="\uD83C\uDF7C Baby" />
 
         <Button
             android:id="@+id/category9_button"
             android:backgroundTint="@color/colorPrimaryDark"
             android:layout_width="170dp"
+            android:textSize="20dp"
             android:layout_height="120dp"
             android:textColor="@color/white"
-            android:text="Household" />
+            android:text="\u2615 Coffee" />
+
     </GridLayout>
 
     <LinearLayout
