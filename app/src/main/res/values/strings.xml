@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Virtual On-Site Shopping</string>
 
-    <string name="dummy_content">Touch the sensor with your smart cart to start.</string>
+    <string name="dummy_content">Touch the sensor with your smart card to start.</string>
     <string name="dummy_content_welcome">Welcome to Virtual On-Site Shopping.</string>
 </resources>
